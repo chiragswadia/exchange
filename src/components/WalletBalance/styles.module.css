@@ -1,0 +1,14 @@
+.root {
+  padding: 0 36px;
+}
+
+.currency {
+  font-size: 44px;
+  color: #fff;
+}
+
+.walletBalance {
+  margin-top: 12px;
+  font-size: 14px;
+  color: #fff;
+}

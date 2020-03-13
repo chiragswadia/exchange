@@ -1,0 +1,30 @@
+.root {
+    position: relative;
+  }
+  
+  .amountInput {
+    display: flex;
+    justify-content: flex-end;
+    text-align: right;
+    position: absolute;
+    top: 16px;
+    right: 36px;
+    border: 0;
+    border-bottom: 1px solid transparent;
+    min-width: 1px;
+    white-space: nowrap;
+    font-size: 44px;
+    color: #fff;
+    background-color: transparent;
+    overflow: visible;
+    user-select: text;
+  }
+  
+  .amountInput:focus {
+    outline: 0;
+  }
+  
+  .amountInput:not(:empty)::before {
+    content: '-';
+  }
+  
