@@ -1,5 +1,5 @@
 import React from "react";
-import SourceCurencySelector from "../SourceCurrencySelector";
+import SourceCurrencySelector from "../SourceCurrencySelector";
 import DestinationCurrency from "../DestinationCurrency";
 
 import cn from './styles.module.css';
@@ -8,6 +8,18 @@ function Exchange() {
     const handleCurrencyExchange = e => {
         e.preventDefault();
         console.log('handleCurrencyExchange')
+    }
+
+    const handleSourceCurrencyChange = () => {
+
+    }
+
+    const handleDestinationCurrencyChange = () => {
+
+    }
+
+    const handleAmountChange = () => {
+
     }
 
     const wallet = {
@@ -23,7 +35,6 @@ function Exchange() {
     const amount = '';
 
     return (
-      <div className={cn.root}>
         <form
             className={cn.form}
             onSubmit={handleCurrencyExchange}
@@ -36,12 +47,12 @@ function Exchange() {
             </button>
         </div>
         <div className={cn.main}>
-        <SourceCurencySelector
+        <SourceCurrencySelector
             wallet={wallet}
             amount={amount}
             sourceCurrency={sourceCurrency}
-            // onChange={this.handleCurrencyFromChange}
-            // onInput={this.handleAmountChange}
+            onChange={handleSourceCurrencyChange}
+            onInput={handleAmountChange}
           />
           <DestinationCurrency
             sourceCurrency={sourceCurrency}
@@ -50,11 +61,10 @@ function Exchange() {
             wallet={wallet}
             amount={amount}
             rate={rate}
-            // onChange={this.handleCurrencyToChange}
+            onChange={handleDestinationCurrencyChange}
           />
         </div>
       </form>
-      </div>
     )
 }
 

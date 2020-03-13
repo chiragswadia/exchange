@@ -1,9 +1,3 @@
-.root {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 .form {
     background: radial-gradient(#1a76ff, #0046c0);
     box-shadow: 0 15px 15px rgba(15, 15, 17, .05), 0 0 30px rgba(15, 15, 17, .2);
