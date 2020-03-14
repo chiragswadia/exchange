@@ -19,6 +19,7 @@ function CurrencySelector({ wallet, currencies, selectedCurrency, onChange }) {
           showThumbs={false}
           showArrows={false}
           showStatus={false}
+          emulateTouch={true}
           onChange={handleOnChange}
         >
           { currencies.map(currency =>
