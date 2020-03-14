@@ -9,27 +9,16 @@ function SourceCurrencySelector(props) {
     const inputRef = React.createRef();
 
     const handleCurrencySelect = sourceCurrency => {
-        const { onChange } = props;
-        
-        if (onChange) {
-          onChange(sourceCurrency);
-        }
+      const { onChange } = props;
+      onChange(sourceCurrency);
     };
 
-    const onAmountInput = event => {
+    const handleAmountChange = event => {
         const { onInput } = props;
         const amount = event.target.value;
-    
-        const parsedAmount = new Number(amount);
-        setAmount(parsedAmount);
-    
-        if (parsedAmount && onInput) {
-          onInput(parsedAmount);
-        }
-    
-        if (amount === '' && onInput) {
-          onInput(0);
-        }
+
+        setAmount(amount);
+        onInput(parseFloat(amount));
     };
 
     const { sourceCurrency, wallet } = props;
@@ -43,13 +32,14 @@ function SourceCurrencySelector(props) {
           selectedCurrency={sourceCurrency}
           onChange={handleCurrencySelect}
         />
+        
         <input
           autoFocus
           type="number"
           className={cn.amountInput}
           value={amount}
           ref={inputRef}
-          onChange={onAmountInput}
+          onChange={handleAmountChange}
         />
       </div>
     );

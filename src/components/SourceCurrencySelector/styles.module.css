@@ -18,6 +18,7 @@
     background-color: transparent;
     overflow: visible;
     user-select: text;
+    width: 150px;
   }
   
   .amountInput:focus {

@@ -11,12 +11,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
-
-
 /* Global override styles */
 .carousel .slide {
   background: none !important;
@@ -29,6 +23,11 @@ code {
 
 .carousel .control-dots {
   bottom: -50px !important;
+  left: -20px !important;
+}
+
+.notification-container {
+  position: absolute !important;
 }
 
 input::-webkit-outer-spin-button,

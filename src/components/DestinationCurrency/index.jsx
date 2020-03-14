@@ -8,10 +8,7 @@ import cn from './styles.module.css';
 function DestinationCurrency(props){
     const onCurrencySelect = destinationCurrency => {
         const { onChange } = props;
-
-        if (onChange) {
-            onChange(destinationCurrency);
-        }
+        onChange(destinationCurrency);
     };
 
     const renderAmount = () => {
@@ -53,10 +50,9 @@ function DestinationCurrency(props){
 DestinationCurrency.propTypes = {
     sourceCurrency: PropTypes.string.isRequired,
     destinationCurrency: PropTypes.string.isRequired,
-    inProgress: PropTypes.bool,
     wallet: PropTypes.object.isRequired,
-    amount: PropTypes.number.isRequired,
-    rate: PropTypes.number.isRequired,
+    amount: PropTypes.number,
+    rate: PropTypes.number,
     onChange: PropTypes.func.isRequired,
 }
 

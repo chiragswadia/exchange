@@ -1,5 +1,5 @@
 
-export const calculateRate = ({ sourceCurrency, destinationCurrency, rates }) => {
+export const calculateExchangeRate = ({ sourceCurrency, destinationCurrency, rates }) => {
     const sourceCurrencyRate = rates[sourceCurrency];
     const destinationCurrencyRate = rates[destinationCurrency];
   

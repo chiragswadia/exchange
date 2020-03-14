@@ -1,68 +1,87 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { NotificationContainer } from "react-notifications";
 import SourceCurrencySelector from "../SourceCurrencySelector";
 import DestinationCurrency from "../DestinationCurrency";
+import { calculateExchangeRate } from '../../helpers';
+import * as actions from '../../actions';
+import isValidTransaction from "./utils/isValidTransaction";
 
 import cn from './styles.module.css';
 
+const RATE_UPDATE_INTERVAL = 600000; // TODO - Change this to 10000 before delivering
+
 function Exchange() {
-    const handleCurrencyExchange = e => {
-        e.preventDefault();
-        console.log('handleCurrencyExchange')
+    const dispatch = useDispatch();
+    const wallet = useSelector(state => state.wallet); // TODO - Maybe use memoized selectors for all if possible
+    const rates = useSelector(state => state.rates);
+    const amount = useSelector(state => state.form.amount);
+    const sourceCurrency = useSelector(state => state.form.sourceCurrency);
+    const destinationCurrency = useSelector(state => state.form.destinationCurrency);
+    const exchangeRate = calculateExchangeRate({ sourceCurrency, destinationCurrency, rates });
+    const isTransactionAllowed = isValidTransaction({ sourceCurrency, destinationCurrency, wallet, amount, rates });
+
+    const performTransaction = event => {
+        event.preventDefault();
+        dispatch(actions.performTransaction());
     }
 
-    const handleSourceCurrencyChange = () => {
-
+    const handleSourceCurrencyChange = sourceCurrency => {
+      dispatch(actions.changeForm({ sourceCurrency }))
     }
 
-    const handleDestinationCurrencyChange = () => {
-
+    const handleDestinationCurrencyChange = destinationCurrency => {
+      dispatch(actions.changeForm({ destinationCurrency }))
     }
 
-    const handleAmountChange = () => {
-
+    const handleAmountChange = amount => {
+      dispatch(actions.changeForm({ amount }));
     }
 
-    const wallet = {
-        EUR: 200.76,
-        USD: 123.68,
-        GBP: 300.54
-    }
+    useEffect(()=> {
+      dispatch(actions.fetchAndUpdateRates());
 
-    const rate =  1.1104;
+      const rateUpdateIntervalId = setInterval(()=> {
+        dispatch(actions.fetchAndUpdateRates());
+      }, RATE_UPDATE_INTERVAL);
 
-    const sourceCurrency = "EUR";
-    const destinationCurrency = "GBP";
-    const amount = '';
+      // Unmount
+      return () => {
+        clearInterval(rateUpdateIntervalId);
+      }
+    }, []);
 
     return (
         <form
             className={cn.form}
-            onSubmit={handleCurrencyExchange}
+            onSubmit={performTransaction}
         >
+        <NotificationContainer />
         <div className={cn.header}>
             <button
               type="submit"
+              disabled={!isTransactionAllowed}
+              className={cn.button}
             >
                 Exchange
             </button>
         </div>
-        <div className={cn.main}>
-        <SourceCurrencySelector
-            wallet={wallet}
-            amount={amount}
-            sourceCurrency={sourceCurrency}
-            onChange={handleSourceCurrencyChange}
-            onInput={handleAmountChange}
-          />
-          <DestinationCurrency
-            sourceCurrency={sourceCurrency}
-            destinationCurrency={destinationCurrency}
-            inProgress={false}
-            wallet={wallet}
-            amount={amount}
-            rate={rate}
-            onChange={handleDestinationCurrencyChange}
-          />
+        <div>
+          <SourceCurrencySelector
+              wallet={wallet}
+              amount={amount}
+              sourceCurrency={sourceCurrency}
+              onChange={handleSourceCurrencyChange}
+              onInput={handleAmountChange}
+            />
+            <DestinationCurrency
+              sourceCurrency={sourceCurrency}
+              destinationCurrency={destinationCurrency}
+              wallet={wallet}
+              amount={amount}
+              rate={exchangeRate}
+              onChange={handleDestinationCurrencyChange}
+            />
         </div>
       </form>
     )

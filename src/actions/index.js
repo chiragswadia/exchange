@@ -1,42 +1,47 @@
-import { useDispatch, useSelector } from 'react-redux'
+import axios from "axios";
+import { NotificationManager } from "react-notifications";
 import { actionTypes } from '../constants';
+import { calculateExchangeRate } from '../helpers';
 
-const apiRoute = 'https://api.exchangeratesapi.io/latest';
+const apiRoute = 'https://api.exchangeratesapi.io/latest?symbols=USD,GBP';
 
 export const changeForm = payload => ({
     type: actionTypes.CHANGE_FORM,
     payload
 });
 
-export const fetchAndUpdateRates = () => async () => {
+export const fetchAndUpdateRates = () => async dispatch => {
     try {
-        const dispatch = useDispatch();
-        const ratesData = await fetch(apiRoute);
+        const ratesResponse = await axios.get(apiRoute);
         dispatch({
-            type: actions.RATES_UPDATE,
-            payload: {
-                rates: ratesData.data.rates,
-            },
+            type: actionTypes.UPDATE_RATE,
+            payload: ratesResponse.data.rates,
         });
     } catch (error) {
-      console.log(error);
+        console.error(error);
     }
 };
 
-export const performTransaction = () => {
-    const dispatch = useDispatch();
-    const form = useSelector(state=>state.form);
-    const rates = useSelector(state=>state.rates);
-    const { sourceCurrency, destinationCurrency, amount } = form;
-    const rate = calculateRate({ sourceCurrency, destinationCurrency, rates });
-  
-    dispatch({
-        type: actionTypes.TRANSACTION,
-        payload: {
-            sourceCurrency,
-            destinationCurrency,
-            amount,
-            rate,
-        },
-    });
+export const performTransaction = () => (dispatch, getState) => {
+    try {
+        const state = getState();
+        const { form, rates } = state;
+        const { sourceCurrency, destinationCurrency, amount } = form;
+        const rate = calculateExchangeRate({ sourceCurrency, destinationCurrency, rates });
+    
+        dispatch({
+            type: actionTypes.TRANSACTION,
+            payload: {
+                sourceCurrency,
+                destinationCurrency,
+                amount,
+                rate,
+            },
+        });
+
+        NotificationManager.success('Transaction Successfull', 'Success', 5000);
+    } catch(error) {
+        console.error(error);
+        NotificationManager.error('Error while performing transaction', 'Error', 5000);
+    }
   };

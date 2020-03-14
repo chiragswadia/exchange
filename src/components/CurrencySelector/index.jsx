@@ -7,7 +7,7 @@ import WalletBalance from '../WalletBalance';
 import cn from './styles.module.css';
 
 function CurrencySelector({ wallet, currencies, selectedCurrency, onChange }) {
-  const handleOnChange = ({ item: index }) => {
+  const handleOnChange = index => {
     onChange(currencies[index]);
   }
 
