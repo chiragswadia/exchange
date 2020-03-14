@@ -1,8 +1,8 @@
 .root {
     position: relative;
-  }
+}
   
-  .amountInput {
+.amountInput {
     display: flex;
     justify-content: flex-end;
     text-align: right;
@@ -19,13 +19,9 @@
     user-select: text;
     width: 150px;
     border-bottom: 1px solid #eceff1;
-  }
+}
   
-  .amountInput:focus {
+.amountInput:focus {
     outline: 0;
-  }
-  
-  .amountInput:not(:empty)::before {
-    content: '-';
-  }
+}
   

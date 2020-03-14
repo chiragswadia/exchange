@@ -1,0 +1,31 @@
+.root {
+    color: #9b9b9b;
+    font-size: 16px;
+}
+
+@keyframes animate-blink {
+    0% {
+        opacity: .3;
+    }
+    20% {
+        opacity: 1;
+    }
+    80% {
+        opacity: 1;
+    }
+    100% {
+        opacity: .3;
+    }
+}
+
+.liveRateIndicator {
+    display: inline-block;
+    margin-right: 5px;
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    background: #2ed06e;
+    animation: animate-blink 2s linear infinite alternate;
+    -webkit-animation: animate-blink 2s linear infinite alternate;
+    -moz-animation: animate-blink 2s linear infinite alternate;
+}

@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { NotificationManager } from "react-notifications";
 import CurrencySelector from '../CurrencySelector';
 
 import cn from './styles.module.css';
@@ -15,7 +16,12 @@ function SourceCurrencySelector(props) {
 
     const handleAmountChange = event => {
         const { onInput } = props;
-        const amount = event.target.value;
+        let amount = event.target.value;
+
+        if( amount > wallet[sourceCurrency] ) {
+          amount = wallet[sourceCurrency];
+          NotificationManager.info(`Your maximum available wallet balance is ${sourceCurrency} ${wallet[sourceCurrency]}`, '', 3000);
+        }
 
         setAmount(amount);
         onInput(parseFloat(amount));

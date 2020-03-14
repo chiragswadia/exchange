@@ -11,15 +11,17 @@ export const changeForm = payload => ({
 });
 
 export const fetchAndUpdateRates = () => async dispatch => {
-    try {
-        const ratesResponse = await axios.get(apiRoute);
-        dispatch({
-            type: actionTypes.UPDATE_RATE,
-            payload: ratesResponse.data.rates,
-        });
-    } catch (error) {
-        console.error(error);
-    }
+    /* TODO - Uncomment while sending the task */
+    // try {
+    //     const ratesResponse = await axios.get(apiRoute);
+    //     dispatch({
+    //         type: actionTypes.UPDATE_RATE,
+    //         payload: ratesResponse.data.rates,
+    //     });
+    // } catch (error) {
+    //     console.error(error);
+    //     NotificationManager.error('Error in fetching latest exchange rates', 'Error', 5000);
+    // }
 };
 
 export const performTransaction = () => (dispatch, getState) => {
@@ -39,7 +41,7 @@ export const performTransaction = () => (dispatch, getState) => {
             },
         });
 
-        NotificationManager.success('Transaction Successfull', 'Success', 5000);
+        NotificationManager.success(`Transfer of ${sourceCurrency} ${amount} to ${destinationCurrency} successful`, 'Success', 5000);
     } catch(error) {
         console.error(error);
         NotificationManager.error('Error while performing transaction', 'Error', 5000);

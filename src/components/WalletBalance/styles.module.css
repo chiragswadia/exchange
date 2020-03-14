@@ -5,10 +5,12 @@
 .currency {
   font-size: 48px;
   color: #333;
+  text-align: left;;
 }
 
 .walletBalance {
   margin-top: 12px;
   font-size: 16px;
+  text-align: left;
   color: #919191;
 }

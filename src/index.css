@@ -22,8 +22,14 @@ body {
 }
 
 .carousel .control-dots {
+  width: auto !important;
   bottom: -50px !important;
-  left: -20px !important;
+}
+
+.carousel .control-dots .dot {
+  background: #bdbdbd !important;
+  width: 12px !important;
+  height: 12px !important;
 }
 
 .notification-container {

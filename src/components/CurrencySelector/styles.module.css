@@ -4,4 +4,10 @@
   padding: 16px 0;
   cursor: grab;
   user-select: none;
+  border-bottom: 1px solid #f1f1f1;
+  padding-bottom: 0px;
+}
+
+.root:last-child {
+  border-bottom: none;
 }

@@ -13,13 +13,9 @@ function DestinationCurrency(props){
 
     const renderAmount = () => {
         const { amount, rate } = props;
-    
-        if (!rate || !amount) {
-          return (
-            <div className={cn.value}/>
-          );
+        if(!amount || !rate){
+          return null;
         }
-    
         const value = (amount * rate).toFixed(2);
     
         return (

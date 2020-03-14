@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { NotificationContainer } from "react-notifications";
+import LiveRate from '../LiveRate';
 import SourceCurrencySelector from "../SourceCurrencySelector";
 import DestinationCurrency from "../DestinationCurrency";
 import { calculateExchangeRate } from '../../helpers';
@@ -38,7 +39,7 @@ function Exchange() {
       dispatch(actions.changeForm({ amount }));
     }
 
-    useEffect(()=> {
+    useEffect(() => {
       dispatch(actions.fetchAndUpdateRates());
 
       const rateUpdateIntervalId = setInterval(()=> {
@@ -58,6 +59,12 @@ function Exchange() {
         >
         <NotificationContainer />
         <div className={cn.header}>
+            <LiveRate
+              sourceCurrency={sourceCurrency}
+              destinationCurrency={destinationCurrency}
+              rate={exchangeRate}
+            />
+
             <button
               type="submit"
               disabled={!isTransactionAllowed}
@@ -67,7 +74,7 @@ function Exchange() {
             </button>
         </div>
         <div>
-          <SourceCurrencySelector
+            <SourceCurrencySelector
               wallet={wallet}
               amount={amount}
               sourceCurrency={sourceCurrency}
