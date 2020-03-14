@@ -8,7 +8,7 @@ function LiveRate({ sourceCurrency, destinationCurrency, rate }) {
     return (
         <div className={cn.root}>
             <span className={cn.liveRateIndicator}></span>
-            <FormattedCurrency currency={sourceCurrency} value={1} />
+            <FormattedCurrency currency={sourceCurrency} value={1} precision={0} />
             {' = '}
             <FormattedCurrency currency={destinationCurrency} value={rate} />
         </div>
