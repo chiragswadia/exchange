@@ -49,7 +49,7 @@ function Exchange() {
       return () => {
         clearInterval(rateUpdateIntervalId);
       }
-    }, []);
+    }, [dispatch]);
 
     return (
         <form

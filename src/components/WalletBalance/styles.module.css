@@ -3,12 +3,12 @@
 }
 
 .currency {
-  font-size: 44px;
-  color: #fff;
+  font-size: 48px;
+  color: #333;
 }
 
 .walletBalance {
   margin-top: 12px;
-  font-size: 14px;
-  color: #fff;
+  font-size: 16px;
+  color: #919191;
 }

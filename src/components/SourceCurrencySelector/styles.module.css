@@ -10,15 +10,15 @@
     top: 16px;
     right: 36px;
     border: 0;
-    border-bottom: 1px solid transparent;
     min-width: 1px;
     white-space: nowrap;
     font-size: 44px;
-    color: #fff;
+    color: #333;
     background-color: transparent;
     overflow: visible;
     user-select: text;
     width: 150px;
+    border-bottom: 1px solid #eceff1;
   }
   
   .amountInput:focus {
