@@ -14,9 +14,18 @@ function SourceCurrencySelector(props) {
       onChange(sourceCurrency);
     };
 
+    const isValidNumberWithTwoDecimalPlaces = amount => {
+      const regex = new RegExp(/^\d*\.?\d{0,2}$/);
+      return regex.test(amount);
+    }
+
     const handleAmountChange = event => {
         const { onInput } = props;
         let amount = event.target.value;
+
+        if(!isValidNumberWithTwoDecimalPlaces(amount)) {
+          return;
+        }
 
         if( amount > wallet[sourceCurrency] ) {
           amount = wallet[sourceCurrency];
@@ -41,7 +50,7 @@ function SourceCurrencySelector(props) {
         
         <input
           autoFocus
-          type="number"
+          type="text"
           className={cn.amountInput}
           value={amount}
           ref={inputRef}
