@@ -65,7 +65,6 @@ exports[`DestinationCurrency Snapshot should match #1 1`] = `
                   data-testid="wallet-balance"
                 >
                   You have 
-                   
                   <span
                     data-testid="formatted-currency"
                   >
@@ -93,7 +92,6 @@ exports[`DestinationCurrency Snapshot should match #1 1`] = `
                   data-testid="wallet-balance"
                 >
                   You have 
-                   
                   <span
                     data-testid="formatted-currency"
                   >
@@ -121,7 +119,6 @@ exports[`DestinationCurrency Snapshot should match #1 1`] = `
                   data-testid="wallet-balance"
                 >
                   You have 
-                   
                   <span
                     data-testid="formatted-currency"
                   >
@@ -149,7 +146,6 @@ exports[`DestinationCurrency Snapshot should match #1 1`] = `
                   data-testid="wallet-balance"
                 >
                   You have 
-                   
                   <span
                     data-testid="formatted-currency"
                   >
@@ -177,7 +173,6 @@ exports[`DestinationCurrency Snapshot should match #1 1`] = `
                   data-testid="wallet-balance"
                 >
                   You have 
-                   
                   <span
                     data-testid="formatted-currency"
                   >
@@ -301,7 +296,6 @@ exports[`DestinationCurrency Snapshot should match #2 1`] = `
                   data-testid="wallet-balance"
                 >
                   You have 
-                   
                   <span
                     data-testid="formatted-currency"
                   >
@@ -329,7 +323,6 @@ exports[`DestinationCurrency Snapshot should match #2 1`] = `
                   data-testid="wallet-balance"
                 >
                   You have 
-                   
                   <span
                     data-testid="formatted-currency"
                   >
@@ -357,7 +350,6 @@ exports[`DestinationCurrency Snapshot should match #2 1`] = `
                   data-testid="wallet-balance"
                 >
                   You have 
-                   
                   <span
                     data-testid="formatted-currency"
                   >
@@ -385,7 +377,6 @@ exports[`DestinationCurrency Snapshot should match #2 1`] = `
                   data-testid="wallet-balance"
                 >
                   You have 
-                   
                   <span
                     data-testid="formatted-currency"
                   >
@@ -413,7 +404,6 @@ exports[`DestinationCurrency Snapshot should match #2 1`] = `
                   data-testid="wallet-balance"
                 >
                   You have 
-                   
                   <span
                     data-testid="formatted-currency"
                   >

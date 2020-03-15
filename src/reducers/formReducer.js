@@ -1,10 +1,10 @@
-import { actionTypes } from '../constants';
+import { actionTypes } from '../constants'
 
 export const initialState = {
   sourceCurrency: 'EUR',
   destinationCurrency: 'GBP',
   amount: 0,
-};
+}
 
 const formReducer = (state = initialState, action) => {
   switch (action.type) {
@@ -13,8 +13,8 @@ const formReducer = (state = initialState, action) => {
     }
 
     default:
-      return state;
+      return state
   }
 }
 
-export default formReducer;
+export default formReducer

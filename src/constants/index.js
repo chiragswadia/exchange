@@ -1,12 +1,11 @@
 export const currencySymbolsByName = {
-    GBP: '£',
-    EUR: '€',
-    USD: '$',
-};
+  GBP: '£',
+  EUR: '€',
+  USD: '$',
+}
 
 export const actionTypes = {
-    CHANGE_FORM: 'FORM/CHANGE',
-    UPDATE_RATE: 'RATES/UPDATE',
-    TRANSACTION: 'WALLET/TRANSACTION'
+  CHANGE_FORM: 'FORM/CHANGE',
+  UPDATE_RATE: 'RATES/UPDATE',
+  TRANSACTION: 'WALLET/TRANSACTION',
 }
-  

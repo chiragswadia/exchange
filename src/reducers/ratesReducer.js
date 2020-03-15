@@ -1,10 +1,10 @@
-import { actionTypes } from '../constants';
+import { actionTypes } from '../constants'
 
 export const initialState = {
   EUR: 1,
   USD: 1.1104, // TODO Remove while sending task
-  GBP: 0.8907
-};
+  GBP: 0.8907,
+}
 
 const ratesReducer = (state = initialState, action) => {
   switch (action.type) {
@@ -12,12 +12,12 @@ const ratesReducer = (state = initialState, action) => {
       return {
         ...state,
         ...action.payload,
-      };
+      }
     }
 
     default:
-      return state;
+      return state
   }
 }
 
-export default ratesReducer;
+export default ratesReducer
