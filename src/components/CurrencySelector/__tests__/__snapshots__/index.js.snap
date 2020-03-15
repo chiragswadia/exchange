@@ -1,0 +1,459 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CurrencySelector Snapshot should match #1 1`] = `
+<div
+  className="root"
+>
+  <div>
+    <div
+      className="carousel carousel-slider"
+      style={
+        Object {
+          "width": "100%",
+        }
+      }
+    >
+      <button
+        aria-label="previous slide / item"
+        className="control-arrow control-prev control-disabled"
+        onClick={[Function]}
+        type="button"
+      />
+      <div
+        className="slider-wrapper axis-horizontal"
+        style={Object {}}
+      >
+        <ul
+          className="slider animated"
+          onMouseDown={[Function]}
+          onTouchEnd={[Function]}
+          onTouchStart={[Function]}
+          style={
+            Object {
+              "MozTransform": "translate3d(-100%,0,0)",
+              "MozTransitionDuration": "350ms",
+              "MsTransform": "translate3d(-100%,0,0)",
+              "MsTransitionDuration": "350ms",
+              "OTransform": "translate3d(-100%,0,0)",
+              "OTransitionDuration": "350ms",
+              "WebkitTransform": "translate3d(-100%,0,0)",
+              "WebkitTransitionDuration": "350ms",
+              "msTransform": "translate3d(-100%,0,0)",
+              "msTransitionDuration": "350ms",
+              "transform": "translate3d(-100%,0,0)",
+              "transitionDuration": "350ms",
+            }
+          }
+        >
+          <li
+            className="slide"
+            onClick={[Function]}
+          >
+            <div
+              className="root"
+            >
+              <div
+                className="currency"
+              >
+                GBP
+              </div>
+              <div
+                className="walletBalance"
+                data-testid="wallet-balance"
+              >
+                You have 
+                 
+                <span
+                  data-testid="formatted-currency"
+                >
+                  £
+                   
+                  300.00
+                </span>
+              </div>
+            </div>
+          </li>
+          <li
+            className="slide selected"
+            onClick={[Function]}
+          >
+            <div
+              className="root"
+            >
+              <div
+                className="currency"
+              >
+                EUR
+              </div>
+              <div
+                className="walletBalance"
+                data-testid="wallet-balance"
+              >
+                You have 
+                 
+                <span
+                  data-testid="formatted-currency"
+                >
+                  €
+                   
+                  100.00
+                </span>
+              </div>
+            </div>
+          </li>
+          <li
+            className="slide"
+            onClick={[Function]}
+          >
+            <div
+              className="root"
+            >
+              <div
+                className="currency"
+              >
+                USD
+              </div>
+              <div
+                className="walletBalance"
+                data-testid="wallet-balance"
+              >
+                You have 
+                 
+                <span
+                  data-testid="formatted-currency"
+                >
+                  $
+                   
+                  200.00
+                </span>
+              </div>
+            </div>
+          </li>
+          <li
+            className="slide"
+            onClick={[Function]}
+          >
+            <div
+              className="root"
+            >
+              <div
+                className="currency"
+              >
+                GBP
+              </div>
+              <div
+                className="walletBalance"
+                data-testid="wallet-balance"
+              >
+                You have 
+                 
+                <span
+                  data-testid="formatted-currency"
+                >
+                  £
+                   
+                  300.00
+                </span>
+              </div>
+            </div>
+          </li>
+          <li
+            className="slide selected"
+            onClick={[Function]}
+          >
+            <div
+              className="root"
+            >
+              <div
+                className="currency"
+              >
+                EUR
+              </div>
+              <div
+                className="walletBalance"
+                data-testid="wallet-balance"
+              >
+                You have 
+                 
+                <span
+                  data-testid="formatted-currency"
+                >
+                  €
+                   
+                  100.00
+                </span>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <button
+        aria-label="next slide / item"
+        className="control-arrow control-next control-disabled"
+        onClick={[Function]}
+        type="button"
+      />
+      <ul
+        className="control-dots"
+      >
+        <li
+          aria-label="slide item 1"
+          className="dot selected"
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          role="button"
+          tabIndex={0}
+          value={0}
+        />
+        <li
+          aria-label="slide item 2"
+          className="dot"
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          role="button"
+          tabIndex={0}
+          value={1}
+        />
+        <li
+          aria-label="slide item 3"
+          className="dot"
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          role="button"
+          tabIndex={0}
+          value={2}
+        />
+      </ul>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`CurrencySelector Snapshot should match #2 1`] = `
+<div
+  className="root"
+>
+  <div>
+    <div
+      className="carousel carousel-slider"
+      style={
+        Object {
+          "width": "100%",
+        }
+      }
+    >
+      <button
+        aria-label="previous slide / item"
+        className="control-arrow control-prev control-disabled"
+        onClick={[Function]}
+        type="button"
+      />
+      <div
+        className="slider-wrapper axis-horizontal"
+        style={Object {}}
+      >
+        <ul
+          className="slider animated"
+          onMouseDown={[Function]}
+          onTouchEnd={[Function]}
+          onTouchStart={[Function]}
+          style={
+            Object {
+              "MozTransform": "translate3d(-300%,0,0)",
+              "MozTransitionDuration": "350ms",
+              "MsTransform": "translate3d(-300%,0,0)",
+              "MsTransitionDuration": "350ms",
+              "OTransform": "translate3d(-300%,0,0)",
+              "OTransitionDuration": "350ms",
+              "WebkitTransform": "translate3d(-300%,0,0)",
+              "WebkitTransitionDuration": "350ms",
+              "msTransform": "translate3d(-300%,0,0)",
+              "msTransitionDuration": "350ms",
+              "transform": "translate3d(-300%,0,0)",
+              "transitionDuration": "350ms",
+            }
+          }
+        >
+          <li
+            className="slide selected"
+            onClick={[Function]}
+          >
+            <div
+              className="root"
+            >
+              <div
+                className="currency"
+              >
+                GBP
+              </div>
+              <div
+                className="walletBalance"
+                data-testid="wallet-balance"
+              >
+                You have 
+                 
+                <span
+                  data-testid="formatted-currency"
+                >
+                  £
+                   
+                  300.00
+                </span>
+              </div>
+            </div>
+          </li>
+          <li
+            className="slide"
+            onClick={[Function]}
+          >
+            <div
+              className="root"
+            >
+              <div
+                className="currency"
+              >
+                EUR
+              </div>
+              <div
+                className="walletBalance"
+                data-testid="wallet-balance"
+              >
+                You have 
+                 
+                <span
+                  data-testid="formatted-currency"
+                >
+                  €
+                   
+                  100.00
+                </span>
+              </div>
+            </div>
+          </li>
+          <li
+            className="slide"
+            onClick={[Function]}
+          >
+            <div
+              className="root"
+            >
+              <div
+                className="currency"
+              >
+                USD
+              </div>
+              <div
+                className="walletBalance"
+                data-testid="wallet-balance"
+              >
+                You have 
+                 
+                <span
+                  data-testid="formatted-currency"
+                >
+                  $
+                   
+                  200.00
+                </span>
+              </div>
+            </div>
+          </li>
+          <li
+            className="slide selected"
+            onClick={[Function]}
+          >
+            <div
+              className="root"
+            >
+              <div
+                className="currency"
+              >
+                GBP
+              </div>
+              <div
+                className="walletBalance"
+                data-testid="wallet-balance"
+              >
+                You have 
+                 
+                <span
+                  data-testid="formatted-currency"
+                >
+                  £
+                   
+                  300.00
+                </span>
+              </div>
+            </div>
+          </li>
+          <li
+            className="slide"
+            onClick={[Function]}
+          >
+            <div
+              className="root"
+            >
+              <div
+                className="currency"
+              >
+                EUR
+              </div>
+              <div
+                className="walletBalance"
+                data-testid="wallet-balance"
+              >
+                You have 
+                 
+                <span
+                  data-testid="formatted-currency"
+                >
+                  €
+                   
+                  100.00
+                </span>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <button
+        aria-label="next slide / item"
+        className="control-arrow control-next control-disabled"
+        onClick={[Function]}
+        type="button"
+      />
+      <ul
+        className="control-dots"
+      >
+        <li
+          aria-label="slide item 1"
+          className="dot"
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          role="button"
+          tabIndex={0}
+          value={0}
+        />
+        <li
+          aria-label="slide item 2"
+          className="dot"
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          role="button"
+          tabIndex={0}
+          value={1}
+        />
+        <li
+          aria-label="slide item 3"
+          className="dot selected"
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          role="button"
+          tabIndex={0}
+          value={2}
+        />
+      </ul>
+    </div>
+  </div>
+</div>
+`;
