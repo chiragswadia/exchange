@@ -1,4 +1,5 @@
 import React from 'react';
+import cns from 'classnames';
 import PropTypes from 'prop-types';
 import { NotificationManager } from "react-notifications";
 import CurrencySelector from '../CurrencySelector';
@@ -48,14 +49,16 @@ function SourceCurrencySelector(props) {
           onChange={handleCurrencySelect}
         />
         
-        <input
-          autoFocus
-          type="text"
-          className={cn.amountInput}
-          value={amount}
-          ref={inputRef}
-          onChange={handleAmountChange}
-        />
+        <div className={cns(cn.amountInputContainer, {[cn.inputWithMinusSign] : amount})}>
+          <input
+            autoFocus
+            type="text"
+            className={cn.amountInput}
+            value={amount}
+            ref={inputRef}
+            onChange={handleAmountChange}
+          />
+        </div>
       </div>
     );
 

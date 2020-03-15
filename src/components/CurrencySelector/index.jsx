@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
 import WalletBalance from '../WalletBalance';
 
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 import cn from './styles.module.css';
 
 function CurrencySelector({ wallet, currencies, selectedCurrency, onChange }) {
