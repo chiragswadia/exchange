@@ -7,7 +7,7 @@ import { actionTypes  } from '../../constants'
 beforeEach(cleanup);
 
 describe("formReducer", () => {
-    test("Returns new state as expected", () =>{
+    test("Returns new state as expected", () => {
         const state = {
             sourceCurrency: 'EUR',
             destinationCurrency: 'GBP',
@@ -26,7 +26,7 @@ describe("formReducer", () => {
         });
     });
 
-    test("Returns same state if incorrect action is passed", () =>{
+    test("Returns same state if incorrect action is passed", () => {
         const state = {
             sourceCurrency: 'EUR',
             destinationCurrency: 'GBP',
@@ -47,7 +47,7 @@ describe("formReducer", () => {
 });
 
 describe("ratesReducer", () => {
-    test("Returns new state as expected", () =>{
+    test("Returns new state as expected", () => {
         const state = {
            EUR: 1,
         };
@@ -66,7 +66,7 @@ describe("ratesReducer", () => {
         });
     });
 
-    test("Returns same state if incorrect action is passed", () =>{
+    test("Returns same state if incorrect action is passed", () => {
         const state = {
             EUR: 1,
          };
@@ -105,7 +105,7 @@ describe("walletReducer", () => {
         });
     });
 
-    test("Returns same state if incorrect action is passed", () =>{
+    test("Returns same state if incorrect action is passed", () => {
         const state = {
             EUR: 500,
             GBP: 800,

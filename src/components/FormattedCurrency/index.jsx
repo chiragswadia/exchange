@@ -4,16 +4,17 @@ import { currencySymbolsByName } from '../../constants';
 
 const DEFAULT_PRECISION = 2;
 
-const FormattedCurrency = ({ currency, value, precision = DEFAULT_PRECISION }) => {
-  const currencySymbol = currencySymbolsByName[currency];
-  const formattedValue = value.toFixed(precision);
+const FormattedCurrency = React.memo(
+  ({ currency, value, precision = DEFAULT_PRECISION }) => {
+    const currencySymbol = currencySymbolsByName[currency];
+    const formattedValue = value.toFixed(precision);
 
-  return (
-    <span data-testid="formatted-currency">
-      { currencySymbol } { formattedValue }
-    </span>
-  )
-}
+    return (
+      <span data-testid="formatted-currency">
+        { currencySymbol } { formattedValue }
+      </span>
+    )
+});
 
 FormattedCurrency.propTypes = {
   currency: PropTypes.string.isRequired,

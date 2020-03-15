@@ -54,7 +54,7 @@ const Exchange = () => {
 
     return (
         <form
-            className={cn.form}
+            className={cn.root}
             onSubmit={performTransaction}
         >
         <NotificationContainer />
