@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import { shallowEqual, useDispatch, useSelector } from 'react-redux'
 import { NotificationContainer } from 'react-notifications'
 import LiveRate from '../LiveRate'
 import SourceCurrencySelector from '../SourceCurrencySelector'
@@ -14,13 +14,16 @@ const RATE_UPDATE_INTERVAL = 600000 // TODO - Change this to 10000 before delive
 
 const Exchange = () => {
   const dispatch = useDispatch()
-  const wallet = useSelector(state => state.wallet) // TODO - Maybe use memoized selectors for all if possible
-  const rates = useSelector(state => state.rates)
-  const amount = useSelector(state => state.form.amount)
-  const sourceCurrency = useSelector(state => state.form.sourceCurrency)
-  const destinationCurrency = useSelector(
-    state => state.form.destinationCurrency
+  const { wallet, rates, form } = useSelector(
+    state => ({
+      wallet: state.wallet,
+      rates: state.rates,
+      form: state.form,
+    }),
+    shallowEqual
   )
+  const { amount, sourceCurrency, destinationCurrency } = form
+
   const exchangeRate = calculateExchangeRate({
     sourceCurrency,
     destinationCurrency,
