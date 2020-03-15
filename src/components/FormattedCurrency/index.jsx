@@ -4,14 +4,14 @@ import { currencySymbolsByName } from '../../constants';
 
 const DEFAULT_PRECISION = 2;
 
-function FormattedCurrency({ currency, value, precision = DEFAULT_PRECISION }) {
+const FormattedCurrency = ({ currency, value, precision = DEFAULT_PRECISION }) => {
   const currencySymbol = currencySymbolsByName[currency];
   const formattedValue = value.toFixed(precision);
 
   return (
-    <React.Fragment>
+    <span data-testid="formatted-currency">
       { currencySymbol } { formattedValue }
-    </React.Fragment>
+    </span>
   )
 }
 

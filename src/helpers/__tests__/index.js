@@ -9,7 +9,7 @@ const rates = {
     GBP: 0.89,
 }
 
-describe('Test for common helpers', () => {
+describe('Common helpers', () => {
     test('calculateExchangeRate works as expected for EUR/USD', () => {
         const requetObject = {
             sourceCurrency: 'EUR',

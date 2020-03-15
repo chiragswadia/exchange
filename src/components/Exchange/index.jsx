@@ -12,7 +12,7 @@ import cn from './styles.module.css';
 
 const RATE_UPDATE_INTERVAL = 600000; // TODO - Change this to 10000 before delivering
 
-function Exchange() {
+const Exchange = () => {
     const dispatch = useDispatch();
     const wallet = useSelector(state => state.wallet); // TODO - Maybe use memoized selectors for all if possible
     const rates = useSelector(state => state.rates);

@@ -5,7 +5,7 @@ import CurrencySelector from '../CurrencySelector';
 
 import cn from './styles.module.css';
 
-function DestinationCurrency(props){
+const DestinationCurrency = props => {
     const onCurrencySelect = destinationCurrency => {
         const { onChange } = props;
         onChange(destinationCurrency);

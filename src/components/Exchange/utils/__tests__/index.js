@@ -15,13 +15,13 @@ const wallet = {
     GBP: 300,
 }
 
-describe('Test for isValidTransaction', () => {
+describe('isValidTransaction', () => {
     test('Transaction should not be valid if both the wallets are same', () => {
         const requestObject = {
             sourceCurrency: 'EUR',
             destinationCurrency: 'EUR',
         }
-        expect(isValidTransaction(requestObject)).toBe(false);
+        expect(isValidTransaction(requestObject)).toBeFalsy();
     });
 
     test('Transaction should be valid if wallets are different and user has sufficient balance in source wallet', () => {
@@ -32,7 +32,7 @@ describe('Test for isValidTransaction', () => {
             wallet,
             amount: 50,
         }
-        expect(isValidTransaction(requestObject)).toBe(true);
+        expect(isValidTransaction(requestObject)).toBeTruthy();
     });
 
     test('Transaction should be invalid if user does not have sufficient balance in source wallet', () => {
@@ -43,6 +43,6 @@ describe('Test for isValidTransaction', () => {
             wallet,
             amount: 150,
         }
-        expect(isValidTransaction(requestObject)).toBe(false);
+        expect(isValidTransaction(requestObject)).toBeFalsy();
     });
 })

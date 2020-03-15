@@ -4,9 +4,9 @@ import FormattedCurrency from '../FormattedCurrency';
 
 import cn from './styles.module.css';
 
-function LiveRate({ sourceCurrency, destinationCurrency, rate }) {
+const LiveRate = ({ sourceCurrency, destinationCurrency, rate }) => {
     return (
-        <div className={cn.root}>
+        <div className={cn.root} data-testid="live-rate">
             <span className={cn.liveRateIndicator}></span>
             <FormattedCurrency currency={sourceCurrency} value={1} precision={0} />
             {' = '}

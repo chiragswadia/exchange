@@ -4,19 +4,20 @@ import FormattedCurrency from '../FormattedCurrency/';
 
 import cn from './styles.module.css';
 
-function WalletBalance({ currency, value }) {
+const WalletBalance = React.memo(
+  ({ currency, value }) => {
   return (
     <div className={cn.root}>
         <div className={cn.currency}>
           { currency }
         </div>
-        <div className={cn.walletBalance}>
+        <div className={cn.walletBalance} data-testid="wallet-balance">
           You have {' '}
           <FormattedCurrency currency={currency} value={value}/>
         </div>
       </div>
   )
-}
+})
 
 WalletBalance.propTypes = {
   currency: PropTypes.string,

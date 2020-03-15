@@ -6,7 +6,7 @@ import WalletBalance from '../WalletBalance';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import cn from './styles.module.css';
 
-function CurrencySelector({ wallet, currencies, selectedCurrency, onChange }) {
+const CurrencySelector = ({ wallet, currencies, selectedCurrency, onChange }) => {
   const handleOnChange = index => {
     onChange(currencies[index]);
   }

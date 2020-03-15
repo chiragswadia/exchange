@@ -6,7 +6,7 @@ import CurrencySelector from '../CurrencySelector';
 
 import cn from './styles.module.css';
 
-function SourceCurrencySelector(props) {
+const SourceCurrencySelector = props => {
     const [amount, setAmount] = React.useState('');
     const inputRef = React.createRef();
 
@@ -57,6 +57,7 @@ function SourceCurrencySelector(props) {
             value={amount}
             ref={inputRef}
             onChange={handleAmountChange}
+            data-testid="amount-input"
           />
         </div>
       </div>
