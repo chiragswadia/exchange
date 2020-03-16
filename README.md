@@ -1,5 +1,5 @@
 ## Exchange
-Here is what the Exchange app does :blush: 
+Here is how the Exchange app works :blush: 
 
 ![exchange-app-demo](https://user-images.githubusercontent.com/1291774/76759003-18a80100-678b-11ea-82f5-03a74c25705a.gif)
 
