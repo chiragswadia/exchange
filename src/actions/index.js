@@ -50,7 +50,7 @@ export const performTransaction = () => (dispatch, getState) => {
       type: actionTypes.CHANGE_FORM,
       payload: {
         amount: 0,
-      }
+      },
     })
 
     NotificationManager.success(

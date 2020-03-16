@@ -7,12 +7,12 @@ import CurrencySelector from '../CurrencySelector'
 import cn from './styles.module.css'
 
 const SourceCurrencySelector = props => {
-  const { amount } = props;
-  const [inputAmount, setInputAmount] = React.useState(amount);
-  
-  React.useEffect(()=>{
-    setInputAmount(amount);
-  }, [amount]);
+  const { amount } = props
+  const [inputAmount, setInputAmount] = React.useState(amount)
+
+  React.useEffect(() => {
+    setInputAmount(amount)
+  }, [amount])
 
   const handleCurrencySelect = sourceCurrency => {
     const { onChange } = props
@@ -66,7 +66,7 @@ const SourceCurrencySelector = props => {
           autoFocus
           type="text"
           className={cn.amountInput}
-          value={inputAmount === 0 ? '': inputAmount}
+          value={inputAmount === 0 ? '' : inputAmount}
           onChange={handleAmountChange}
           data-testid="amount-input"
         />
