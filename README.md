@@ -1,7 +1,7 @@
 ## Exchange
 Here is how the Exchange app works :blush: 
 
-![exchange-app-demo](https://user-images.githubusercontent.com/1291774/76759003-18a80100-678b-11ea-82f5-03a74c25705a.gif)
+![exchange-app-demo (1)](https://user-images.githubusercontent.com/1291774/76799349-9db60900-67d1-11ea-96ef-ce609b6bf1d2.gif)
 
 ## Motivation
 I was reading about React Hooks from quite a few months now, but never used it in any of my apps, as I still write class based components at my full-time job because of the old ( not that old ) React codebase.
