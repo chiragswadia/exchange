@@ -38,7 +38,7 @@ exports[`Exchange Snapshot should match 1`] = `
     </div>
     <button
       className="button"
-      disabled={false}
+      disabled={true}
       type="submit"
     >
       Exchange
@@ -508,13 +508,7 @@ exports[`Exchange Snapshot should match 1`] = `
       </div>
       <div
         className="amount"
-      >
-        <div
-          className="value"
-        >
-          44.50
-        </div>
-      </div>
+      />
     </div>
   </div>
 </form>

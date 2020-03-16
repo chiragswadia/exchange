@@ -45,7 +45,7 @@ DestinationCurrency.propTypes = {
   sourceCurrency: PropTypes.string.isRequired,
   destinationCurrency: PropTypes.string.isRequired,
   wallet: PropTypes.object.isRequired,
-  amount: PropTypes.number,
+  amount: PropTypes.any,
   rate: PropTypes.number,
   onChange: PropTypes.func.isRequired,
 }

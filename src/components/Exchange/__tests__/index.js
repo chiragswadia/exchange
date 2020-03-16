@@ -20,7 +20,7 @@ jest.mock('react-redux', () => ({
         GBP: 0.89,
       },
       form: {
-        amount: 50,
+        amount: 0,
         sourceCurrency: 'EUR',
         destinationCurrency: 'GBP',
       },

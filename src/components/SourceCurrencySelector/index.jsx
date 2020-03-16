@@ -7,38 +7,42 @@ import CurrencySelector from '../CurrencySelector'
 import cn from './styles.module.css'
 
 const SourceCurrencySelector = props => {
-  const [amount, setAmount] = React.useState('')
-  const inputRef = React.createRef()
+  const { amount } = props;
+  const [inputAmount, setInputAmount] = React.useState(amount);
+  
+  React.useEffect(()=>{
+    setInputAmount(amount);
+  }, [amount]);
 
   const handleCurrencySelect = sourceCurrency => {
     const { onChange } = props
     onChange(sourceCurrency)
   }
 
-  const isValidNumberWithTwoDecimalPlaces = amount => {
+  const isValidNumberWithTwoDecimalPlaces = inputAmount => {
     const regex = new RegExp(/^\d*\.?\d{0,2}$/)
-    return regex.test(amount)
+    return regex.test(inputAmount)
   }
 
   const handleAmountChange = event => {
     const { onInput } = props
-    let amount = event.target.value
+    let inputAmount = event.target.value
 
-    if (!isValidNumberWithTwoDecimalPlaces(amount)) {
+    if (!isValidNumberWithTwoDecimalPlaces(inputAmount)) {
       return
     }
 
-    if (amount > wallet[sourceCurrency]) {
-      amount = wallet[sourceCurrency].toFixed(2)
+    if (inputAmount > wallet[sourceCurrency]) {
+      inputAmount = wallet[sourceCurrency].toFixed(2)
       NotificationManager.info(
-        `Your maximum available wallet balance is ${sourceCurrency} ${amount}`,
+        `Your maximum available wallet balance is ${sourceCurrency} ${inputAmount}`,
         '',
         3000
       )
     }
 
-    setAmount(amount)
-    onInput(parseFloat(amount))
+    setInputAmount(inputAmount)
+    onInput(inputAmount)
   }
 
   const { sourceCurrency, wallet } = props
@@ -55,15 +59,14 @@ const SourceCurrencySelector = props => {
 
       <div
         className={cns(cn.amountInputContainer, {
-          [cn.inputWithMinusSign]: amount,
+          [cn.inputWithMinusSign]: inputAmount,
         })}
       >
         <input
           autoFocus
           type="text"
           className={cn.amountInput}
-          value={amount}
-          ref={inputRef}
+          value={inputAmount === 0 ? '': inputAmount}
           onChange={handleAmountChange}
           data-testid="amount-input"
         />
@@ -74,7 +77,7 @@ const SourceCurrencySelector = props => {
 
 SourceCurrencySelector.propTypes = {
   wallet: PropTypes.object.isRequired,
-  amount: PropTypes.number.isRequired,
+  amount: PropTypes.any.isRequired,
   sourceCurrency: PropTypes.string.isRequired,
   onInput: PropTypes.func.isRequired,
   onChange: PropTypes.func.isRequired,

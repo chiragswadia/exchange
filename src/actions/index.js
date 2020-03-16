@@ -45,6 +45,14 @@ export const performTransaction = () => (dispatch, getState) => {
       },
     })
 
+    // Reset form amount
+    dispatch({
+      type: actionTypes.CHANGE_FORM,
+      payload: {
+        amount: 0,
+      }
+    })
+
     NotificationManager.success(
       `Transfer of ${sourceCurrency} ${amount} to ${destinationCurrency} successful`,
       'Success',
