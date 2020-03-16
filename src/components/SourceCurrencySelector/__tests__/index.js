@@ -44,7 +44,7 @@ describe('SourceCurrencySelector', () => {
 
     fireEvent.change(getByTestId('amount-input'), { target: { value: 9999 } })
 
-    expect(getByTestId('amount-input').value).toBe(wallet.GBP.toString())
+    expect(getByTestId('amount-input').value).toBe("300.00")
   })
 
   test('Input field works as expected for invalid amount ( more than 2 digits after decimal places )', () => {

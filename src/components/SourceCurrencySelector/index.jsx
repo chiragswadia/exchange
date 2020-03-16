@@ -29,9 +29,9 @@ const SourceCurrencySelector = props => {
     }
 
     if (amount > wallet[sourceCurrency]) {
-      amount = wallet[sourceCurrency]
+      amount = wallet[sourceCurrency].toFixed(2)
       NotificationManager.info(
-        `Your maximum available wallet balance is ${sourceCurrency} ${wallet[sourceCurrency]}`,
+        `Your maximum available wallet balance is ${sourceCurrency} ${amount}`,
         '',
         3000
       )
