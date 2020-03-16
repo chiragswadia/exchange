@@ -8,7 +8,7 @@ I was reading about React Hooks from quite a few months now, but never used it i
 
 So I decided let's put the theoretical knowledge into practice and write a small React app from scratch using Hooks. I am proud that this app has 
 
-> No class components :)
+No class components :wink:
 
 Not only React ( `useState`, `useEffect` etc ), but it was a good experience learning to use hooks like `useSelector`, `useDispatch` for `react-redux`, which otherwise takes a lot of boilerplate for `connect` HOC, `mapStateToProps`, `mapDispatchToProps` etc 
 
