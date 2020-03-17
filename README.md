@@ -1,5 +1,7 @@
-## Exchange
+## Exchange [![Netlify Status](https://api.netlify.com/api/v1/badges/5f7d36e4-8065-4e0a-b8f0-f694d92a872d/deploy-status)](https://app.netlify.com/sites/exchange-chirag/deploys)
 Here is how the Exchange app works :blush: 
+
+[View Demo](https://exchange-chirag.netlify.com/)
 
 ![exchange-app-demo (1)](https://user-images.githubusercontent.com/1291774/76799349-9db60900-67d1-11ea-96ef-ce609b6bf1d2.gif)
 
