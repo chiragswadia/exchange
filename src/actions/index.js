@@ -3,6 +3,7 @@ import { NotificationManager } from 'react-notifications'
 import { actionTypes } from '../constants'
 import { calculateExchangeRate } from '../helpers'
 
+const NOTIFICATIONS_TIMEOUT = 5000 // ms
 const apiRoute = 'https://api.exchangeratesapi.io/latest?symbols=USD,GBP'
 
 export const changeForm = payload => ({
@@ -11,17 +12,20 @@ export const changeForm = payload => ({
 })
 
 export const fetchAndUpdateRates = () => async dispatch => {
-  /* TODO - Uncomment while sending the task */
-  // try {
-  //     const ratesResponse = await axios.get(apiRoute);
-  //     dispatch({
-  //         type: actionTypes.UPDATE_RATE,
-  //         payload: ratesResponse.data.rates,
-  //     });
-  // } catch (error) {
-  //     console.error(error);
-  //     NotificationManager.error('Error in fetching latest exchange rates', 'Error', 5000);
-  // }
+  try {
+    const ratesResponse = await axios.get(apiRoute)
+    dispatch({
+      type: actionTypes.UPDATE_RATE,
+      payload: ratesResponse.data.rates,
+    })
+  } catch (error) {
+    console.error(error)
+    NotificationManager.error(
+      'Error in fetching latest exchange rates',
+      'Error',
+      NOTIFICATIONS_TIMEOUT
+    )
+  }
 }
 
 export const performTransaction = () => (dispatch, getState) => {
@@ -56,14 +60,14 @@ export const performTransaction = () => (dispatch, getState) => {
     NotificationManager.success(
       `Transfer of ${sourceCurrency} ${amount} to ${destinationCurrency} successful`,
       'Success',
-      5000
+      NOTIFICATIONS_TIMEOUT
     )
   } catch (error) {
     console.error(error)
     NotificationManager.error(
       'Error while performing transaction',
       'Error',
-      5000
+      NOTIFICATIONS_TIMEOUT
     )
   }
 }

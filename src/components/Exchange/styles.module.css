@@ -6,6 +6,9 @@
     border-bottom-width: 60px;
     margin-top: 50px;
     border-radius: 20px;
+    -webkit-box-shadow: 4px 2px 9px 1px rgba(189,183,189,0.88);
+    -moz-box-shadow: 4px 2px 9px 1px rgba(189,183,189,0.88);
+    box-shadow: 4px 2px 9px 1px rgba(189,183,189,0.88);
   }
   
 .header {

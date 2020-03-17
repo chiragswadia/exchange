@@ -10,7 +10,7 @@ import isValidTransaction from './utils/isValidTransaction'
 
 import cn from './styles.module.css'
 
-const RATE_UPDATE_INTERVAL = 600000 // TODO - Change this to 10000 before delivering
+const RATE_UPDATE_INTERVAL = 10000
 
 const Exchange = () => {
   const dispatch = useDispatch()

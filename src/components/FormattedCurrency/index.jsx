@@ -7,6 +7,9 @@ const DEFAULT_PRECISION = 2
 const FormattedCurrency = React.memo(
   ({ currency, value, precision = DEFAULT_PRECISION }) => {
     const currencySymbol = currencySymbolsByName[currency]
+    if (!value) {
+      return null
+    }
     const formattedValue = value.toFixed(precision)
 
     return (
@@ -19,7 +22,7 @@ const FormattedCurrency = React.memo(
 
 FormattedCurrency.propTypes = {
   currency: PropTypes.string.isRequired,
-  value: PropTypes.number.isRequired,
+  value: PropTypes.number,
   precision: PropTypes.number,
 }
 
